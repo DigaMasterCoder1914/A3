@@ -1,34 +1,3 @@
-% Atributos  Base Jogador
-
-jogador(cleiton).
-
-p(cleiton,70).
-a(cleiton,1.78).
-i(cleiton,35).
-mPj(cleiton,0.7).
-posi(cleiton,3).
-
-% atributos de ataque
-
-voltamArcar(cleiton,3).
-mG(cleiton,0.25).
-mA(cleiton,0.15).
-mC(cleiton,50).
-mP(cleiton,81).
-sobeProataque(cleiton,3).
-
-% atributos Defesa
-
-mDBI(cleiton,30). 
-mDFC(cleiton,0.4). 
-mDdG(cleiton,10). 
-mdGSF(cleiton,0.2).
-
-% atributos DO TIME 
-
-ctJ(cleiton,25).
-atJ(cleiton,5).
-
 % atRIBUTOS DOS estadios SEDIADORES DOS JogadorGenéricoOGOS DA COPA DO MUNDO
 
 estadio(azteca).
@@ -91,6 +60,39 @@ ct(bMO_Field,22.5).
 f1Est1(cleiton,metLife).
 f1Est2(cleiton,liNColn_Financial_Field).
 f1Est3(cleiton,hard_Rock).
+
+
+% Atributos  Base Jogador
+
+jogador(cleiton).
+
+p(cleiton,70).
+a(cleiton,1.78).
+i(cleiton,35).
+mPj(cleiton,0.7).
+posi(cleiton,3).
+
+% atributos de ataque
+
+voltamArcar(cleiton,3).
+mG(cleiton,0.25).
+mA(cleiton,0.15).
+mC(cleiton,50).
+mP(cleiton,81).
+sobeProataque(cleiton,3).
+
+% atributos Defesa
+
+mDBI(cleiton,30). 
+mDFC(cleiton,0.4). 
+mDdG(cleiton,10). 
+mdGSF(cleiton,0.2).
+
+% atributos DO TIME 
+
+ctJ(cleiton,25).
+atJ(cleiton,5).
+
 
 
 % Função que inferi a  postura Ofensiva
