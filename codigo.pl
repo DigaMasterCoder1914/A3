@@ -48,6 +48,7 @@ estadio(leviS).
 estadio(bC_Place).
 estadio(bMO_Field).
 
+% altitude dos estadios 
 
 at(azteca,2240).
 at( akron,1560).
@@ -65,6 +66,8 @@ at(llumen_Field,20).
 at(leviS,20).
 at(bC_Place,10).
 at(bMO_Field,76).
+
+%clima dos estadios 
 
 ct(azteca,24).
 ct( akron,24).
@@ -116,9 +119,7 @@ iNC(JogadorGenérico,1) :- mPj(JogadorGenérico,X), X < 0.35.
 
 % Função que inferi O NIVEL DE DESGASTE 
 
-
 dG(JogadorGenérico,muito_pouco) :- dECM(JogadorGenérico,A),i(JogadorGenérico,B),iNC(JogadorGenérico,C),A =:= 1, B >= 18,B =< 25 , C =:= 1.
-
 dG(JogadorGenérico,pouco) :- dECM(JogadorGenérico,A),i(JogadorGenérico,B),iNC(JogadorGenérico,C) , A =:= 3, B >= 18,B =< 25 , C =:= 1 . 
 dG(JogadorGenérico,pouco) :- dECM(JogadorGenérico,A),i(JogadorGenérico,B),iNC(JogadorGenérico,C), A =:= 2 , B > 25,B =< 31 , C =:= 1 .
 dG(JogadorGenérico,pouco) :- dECM(JogadorGenérico,A),i(JogadorGenérico,B),iNC(JogadorGenérico,C), A =:= 1 , B >= 18,B =< 25   , C =:= 2 .
@@ -143,9 +144,7 @@ dG(JogadorGenérico,mediano) :- dECM(JogadorGenérico,A),i(JogadorGenérico,B),i
 dG(JogadorGenérico,elevado) :- dECM(JogadorGenérico,A),i(JogadorGenérico,B),iNC(JogadorGenérico,C), A =:= 2, B  > 31   , C =:= 3 . 
 dG(JogadorGenérico,elevado) :- dECM(JogadorGenérico,A),i(JogadorGenérico,B),iNC(JogadorGenérico,C) ,A =:= 3 , B > 25,B =< 31 , C =:= 3  . 
 dG(JogadorGenérico,elevado) :- dECM(JogadorGenérico,A),i(JogadorGenérico,B),iNC(JogadorGenérico,C) ,A =:= 3 , B  > 31  , C =:= 1 . 
-
 dG(JogadorGenérico,muito) :- dECM(JogadorGenérico,A),i(JogadorGenérico,B),iNC(JogadorGenérico,C) ,A =:= 3 , B  > 31  , C =:= 2  . 
-
 dG(JogadorGenérico,muitoElevado) :- dECM(JogadorGenérico,A),i(JogadorGenérico,B),iNC(JogadorGenérico,C), A =:= 3 , B  > 31  , C =:= 3  . 
 
 % Função que inferi o imC DO JogadorGenérico 
@@ -289,9 +288,9 @@ difAt(JogadorGenérico,Dif) :-  bMAiorAltEstF1(JogadorGenérico,X),atJ(JogadorGe
 % Função que classifica a diferença de Altitude
 
 nivelDaDifAt(JogadorGenérico,baixa) :- difAt(JogadorGenérico,X) , X =< 500.
-nivelDaDifAt(JogadorGenérico,media) :- difAt(JogadorGenérico,X) , X >= 500, X =< 1200 .
-nivelDaDifAt(JogadorGenérico,elevada) :- difAt(JogadorGenérico,X) , X >= 1200, X =< 2100 .
-nivelDaDifAt(JogadorGenérico,muito_elevada) :- difAt(JogadorGenérico,X) , X >= 2100, X =< 3300 .
+nivelDaDifAt(JogadorGenérico,media) :- difAt(JogadorGenérico,X) , X > 500, X =< 1200 .
+nivelDaDifAt(JogadorGenérico,elevada) :- difAt(JogadorGenérico,X) , X > 1200, X =< 2100 .
+nivelDaDifAt(JogadorGenérico,muito_elevada) :- difAt(JogadorGenérico,X) , X > 2100, X =< 3300 .
 nivelDaDifAt(JogadorGenérico,extrema) :- difAt(JogadorGenérico,X) , X > 4300 .
 
 % Função que inferi a  Diferença de ClimA  
