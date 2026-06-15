@@ -90,14 +90,13 @@ f1Est2(cleiton,liNColn_Financial_Field).
 f1Est3(cleiton,hard_Rock).
 
 
-% Função que inferi a  positura Ofensiva
+% Função que inferi a  postura Ofensiva
 
 pOF(JogadorGenérico,conservador) :-   ( ((posi(JogadorGenérico,2);posi(JogadorGenérico,3)),voltamArcar(JogadorGenérico,X), X =< 1) ) ;( ( posi(JogadorGenérico,1),sobeProataque(JogadorGenérico,X), X =:=  3) ).
 pOF(JogadorGenérico,mediano) :-  (((posi(JogadorGenérico,2);posi(JogadorGenérico,3)),voltamArcar(JogadorGenérico,X), X  =:= 2)  ;(posi(JogadorGenérico,1),sobeProataque(JogadorGenérico,X), X =:=  2))  .
 pOF(JogadorGenérico,opressivo) :- (((posi(JogadorGenérico,2);posi(JogadorGenérico,3)),voltamArcar(JogadorGenérico,X), X  =:= 3)  ;(posi(JogadorGenérico,1),sobeProataque(JogadorGenérico,X), X =:=  1))  .
 
-% Função que inferi a  positura Defensiva
-
+% Função que inferi a  postura Defensiva
 
 pDEF(JogadorGenérico,conservador) :- (( (posi(JogadorGenérico,2);posi(JogadorGenérico,3)),voltamArcar(JogadorGenérico,X), X =:=  3 ) ; (posi(JogadorGenérico,1),sobeProataque(JogadorGenérico,X), X =:=  1))  .
 pDEF(JogadorGenérico,mediano) :- (((posi(JogadorGenérico,2);posi(JogadorGenérico,3)),voltamArcar(JogadorGenérico,X), X =:=  2 ) ; (posi(JogadorGenérico,1),sobeProataque(JogadorGenérico,X), X =:=  2)) .
@@ -177,7 +176,6 @@ perfGol(JogadorGenérico,25) :- posi(JogadorGenérico,3),mG(JogadorGenérico,X),
 perfGol(JogadorGenérico,35) :- posi(JogadorGenérico,3),mG(JogadorGenérico,X), X  > 0.30 ,X =< 0.40 .
 perfGol(JogadorGenérico,50) :- posi(JogadorGenérico,3),mG(JogadorGenérico,X), X  > 0.40  .
 
-
 % Função que inferi a perfomAnce de um JogadorGenérico  Quanto aos gols pra zona de camPo  2
 
 perfGol(JogadorGenérico,5) :-  posi(JogadorGenérico,2),mG(JogadorGenérico,X), X =< 0.10 .
@@ -185,24 +183,19 @@ perfGol(JogadorGenérico,10) :- posi(JogadorGenérico,2),mG(JogadorGenérico,X),
 perfGol(JogadorGenérico,19) :- posi(JogadorGenérico,2),mG(JogadorGenérico,X), X  > 0.20 ,X =< 0.35 .
 perfGol(JogadorGenérico,29) :- posi(JogadorGenérico,2),mG(JogadorGenérico,X), X  >  0.35 .
 
-
-
 % Função que inferi a perfomAnce de um JogadorGenérico  Quanto AS assistencias  pra zona de camPo 3
 
 perfAS(JogadorGenérico,5) :-  posi(JogadorGenérico,3),mA(JogadorGenérico,X), X =< 0.10 .
 perfAS(JogadorGenérico,10) :-  posi(JogadorGenérico,3),mA(JogadorGenérico,X), X > 0.10,X =< 0.20 .
-perfAS(JogadorGenérico,20) :-  posi(JogadorGenérico,3),mA(JogadorGenérico,X), X > 0.20,X =< 0.30 .
-perfAS(JogadorGenérico,30) :-  posi(JogadorGenérico,3),mA(JogadorGenérico,X), X > 0.30,X =< 0.35 .
-perfAS(JogadorGenérico,40) :-  posi(JogadorGenérico,3),mA(JogadorGenérico,X), X > 0.35,X =< 0.40 .
-perfAS(JogadorGenérico,45) :-  posi(JogadorGenérico,3),mA(JogadorGenérico,X), X > 0.40,X =< 0.45 .
-perfAS(JogadorGenérico,50) :-  posi(JogadorGenérico,3),mA(JogadorGenérico,X), X > 0.45  .
+perfAS(JogadorGenérico,20) :-  posi(JogadorGenérico,3),mA(JogadorGenérico,X), X > 0.20,X =< 0.40 .
+perfAS(JogadorGenérico,25) :-  posi(JogadorGenérico,3),mA(JogadorGenérico,X), X > 0.40  .
 
 % Função que inferi a perfomAnce de um JogadorGenérico  Quanto AS assistencias  pra zona de camPo 2
 
 perfAS(JogadorGenérico,4) :-  posi(JogadorGenérico,2),mA(JogadorGenérico,X), X =< 0.15 .
 perfAS(JogadorGenérico,19) :- posi(JogadorGenérico,2),mA(JogadorGenérico,X), X > 0.15,X =< 0.25 .
 perfAS(JogadorGenérico,29) :- posi(JogadorGenérico,2),mA(JogadorGenérico,X), X > 0.25,X =< 0.30 .
-perfAS(JogadorGenérico,39) :- posi(JogadorGenérico,2),mA(JogadorGenérico,X), X  > 0.30 .
+perfAS(JogadorGenérico,41) :- posi(JogadorGenérico,2),mA(JogadorGenérico,X), X  > 0.30 .
 
 % Função que inferi a perfomAnce de um JogadorGenérico  Quanto aos passes certos pra zona de camPo 3
 
@@ -295,11 +288,11 @@ difAt(JogadorGenérico,Dif) :-  bMAiorAltEstF1(JogadorGenérico,X),atJ(JogadorGe
 
 % Função que classifica a diferença de Altitude
 
-nivelDaDifAt(JogadorGenérico,baixa) :- difAt(JogadorGenérico,X) , X =< 100 .
-nivelDaDifAt(JogadorGenérico,media) :- difAt(JogadorGenérico,X) , X >= 1000, X =< 2200 .
-nivelDaDifAt(JogadorGenérico,elevada) :- difAt(JogadorGenérico,X) , X >= 2200, X =< 4100 .
-nivelDaDifAt(JogadorGenérico,muito_elevada) :- difAt(JogadorGenérico,X) , X >= 4100, X =< 5300 .
-nivelDaDifAt(JogadorGenérico,extrema) :- difAt(JogadorGenérico,X) , X > 5300 .
+nivelDaDifAt(JogadorGenérico,baixa) :- difAt(JogadorGenérico,X) , X =< 500.
+nivelDaDifAt(JogadorGenérico,media) :- difAt(JogadorGenérico,X) , X >= 500, X =< 1200 .
+nivelDaDifAt(JogadorGenérico,elevada) :- difAt(JogadorGenérico,X) , X >= 1200, X =< 2100 .
+nivelDaDifAt(JogadorGenérico,muito_elevada) :- difAt(JogadorGenérico,X) , X >= 2100, X =< 3300 .
+nivelDaDifAt(JogadorGenérico,extrema) :- difAt(JogadorGenérico,X) , X > 4300 .
 
 % Função que inferi a  Diferença de ClimA  
 
@@ -369,16 +362,16 @@ alimento(Jogador, barras_energeticas) :- nivelDaDifAt(Jogador, muito_elevada).
 alimento(Jogador, suco_de_uva_diluído) :- nivelDaDifAt(Jogador, extrema).  
 alimento(Jogador, isotonicos) :- nivelDaDifAt(Jogador, extrema).  
 alimento(Jogador, suco_de_laranja_diluído) :- nivelDaDifAt(Jogador, extrema).  
-alimento(Jogador, pedialyte_Sport) :- nivelDaDifAt(Jogador, media).
-alimento(Jogador, liquid_I_V) :- nivelDaDifAt(Jogador, media).
-alimento(Jogador, kiwi) :- nivelDaDifAt(Jogador, alta).
-alimento(Jogador, batata_inglesa) :- nivelDaDifAt(Jogador, alta).
-alimento(Jogador, tapioca) :- nivelDaDifAt(Jogador, alta).
-alimento(Jogador, laranja) :- nivelDaDifAt(Jogador, alta).
-alimento(Jogador, gatorade) :- nivelDaDifAt(Jogador, alta).
-alimento(Jogador, powerade) :- nivelDaDifAt(Jogador, alta).
-alimento(Jogador, pao_sem_glúten_a_base_de_arroz) :- nivelDaDifAt(Jogador, alta).
-alimento(Jogador, arroz_branco) :- nivelDaDifAt(Jogador, alta).
+alimento(Jogador, pedialyte_Sport) :- nivelDaDifCl(Jogador, media).
+alimento(Jogador, liquid_I_V) :- nivelDaDifCl(Jogador, media).
+alimento(Jogador, kiwi) :- nivelDaDifCl(Jogador, alta).
+alimento(Jogador, batata_inglesa) :- nivelDaDifCl(Jogador, alta).
+alimento(Jogador, tapioca) :- nivelDaDifCl(Jogador, alta).
+alimento(Jogador, laranja) :- nivelDaDifCl(Jogador, alta).
+alimento(Jogador, gatorade) :- nivelDaDifCl(Jogador, alta).
+alimento(Jogador, powerade) :- nivelDaDifCl(Jogador, alta).
+alimento(Jogador, pao_sem_glúten_a_base_de_arroz) :- nivelDaDifCl(Jogador, alta).
+alimento(Jogador, arroz_branco) :- nivelDaDifCl(Jogador, alta).
 alimento(Jogador, mel) :- imcNivel(Jogador, baixo).
 alimento(Jogador, azeite) :- imcNivel(Jogador, baixo).
 alimento(Jogador, batata_doce) :- imcNivel(Jogador, baixo).
