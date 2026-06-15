@@ -1,4 +1,4 @@
-
+% Atributos  Base Jogador
 
 jogador(cleiton).
 
