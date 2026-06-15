@@ -55,12 +55,6 @@ ct(leviS,17.5).
 ct(bC_Place,18).
 ct(bMO_Field,22.5).
 
-% estadios da primeira fase de grupo DO JogadorGenérico
-
-f1Est1(cleiton,metLife).
-f1Est2(cleiton,liNColn_Financial_Field).
-f1Est3(cleiton,hard_Rock).
-
 
 % Atributos  Base Jogador
 
@@ -92,6 +86,13 @@ mdGSF(cleiton,0.2).
 
 ctJ(cleiton,25).
 atJ(cleiton,5).
+
+
+% estadios da primeira fase de grupo DO JogadorGenérico
+
+f1Est1(cleiton,metLife).
+f1Est2(cleiton,liNColn_Financial_Field).
+f1Est3(cleiton,hard_Rock).
 
 
 
